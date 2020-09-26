@@ -184,7 +184,7 @@ func (o *MyOrm) writeToLog(query string, bindings ...interface{}) {
 
 func (o *MyOrm) GetDBConnection(connectionName string) (*sqlx.DB, error) {
 	// Check connection exists
-	if ContainsStr(o.connectionNames, connectionName) {
+	if !ContainsStr(o.connectionNames, connectionName) {
 		return nil, errors.New("invalid connection specified")
 	}
 	return o.connections[connectionName], nil
