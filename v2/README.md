@@ -49,7 +49,7 @@ func main() {
     })
     
     var postsData []Post
-	
-	_ = orm.Table("posts").Get(&postsData)
+    
+    _ = orm.Table("posts").Get(&postsData)
 }
 ```

@@ -42,14 +42,14 @@ func main() {
 	    panic(err.Error())
     }
 
-	orm := myorm.DBInit(myorm.DBConnection{
-		DB:             db,
-		DBDriver:       "mysql",
-		ConnectionName: "default",
-	})
+    orm := myorm.DBInit(myorm.DBConnection{
+        DB:             db,
+        DBDriver:       "mysql",
+        ConnectionName: "default",
+    })
     
     var postsData []Post
-	
-	_ = orm.Table("posts").Get(&postsData)
+    
+    _ = orm.Table("posts").Get(&postsData)
 }
 ```
